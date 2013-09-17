@@ -29,7 +29,7 @@
 	"target-dir" : "alyxgray/OATHTokenBundle",
 	"minimum-stability" : "dev",
 	"support" : {
-		"source" : "git@github.com:alyxgray/AlyxGrayOATHTokenBundle.git",
+		"source" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle",
 		"email" : "opensource@alyxgray.com",
 		"issues" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/issues",
 		"wiki" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/wiki"
