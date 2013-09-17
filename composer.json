@@ -1,0 +1,33 @@
+{
+	"name" : "AlyxGrayOATHTokenBundle",
+	"description" : "Provides OATH token support for your Symfony2 project.",
+	"type" : "library",
+	"authors" : [{
+			"name" : "Alyx Gray",
+			"email" : "opensource@alyxgray.com",
+			"homepage" : "http://alyxgray.com",
+			"role" : "developer"
+		}
+	],
+	"keywords" : [
+		"oath",
+		"token"
+	],
+	"homepage" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle",
+	"license" : [
+		"MIT"
+	],
+	"autoload" : {
+		"psr-0" : {
+			"AlyxGray\\OATHTokenBundle" : ""
+		}
+	},
+	"target-dir" : "alyxgray/OATHTokenBundle",
+	"minimum-stability" : "dev",
+	"support" : {
+		"source" : "git@github.com:alyxgray/AlyxGrayOATHTokenBundle.git",
+		"email" : "opensource@alyxgray.com",
+		"issues" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/issues",
+		"wiki" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/wiki"
+	}
+}
