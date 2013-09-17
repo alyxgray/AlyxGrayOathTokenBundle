@@ -1,5 +1,5 @@
 {
-	"name" : "AlyxGrayOATHTokenBundle",
+	"name" : "alyxgray/oath-token-bundle",
 	"description" : "Provides OATH token support for your Symfony2 project.",
 	"type" : "library",
 	"authors" : [{
