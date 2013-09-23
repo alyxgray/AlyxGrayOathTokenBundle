@@ -13,7 +13,7 @@
 		"oath",
 		"token"
 	],
-	"homepage" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle",
+	"homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
 	"license" : [
 		"MIT"
 	],
@@ -29,9 +29,9 @@
 	"target-dir" : "alyxgray/OATHTokenBundle",
 	"minimum-stability" : "dev",
 	"support" : {
-		"source" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle",
+		"source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
 		"email" : "opensource@alyxgray.com",
-		"issues" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/issues",
-		"wiki" : "https://github.com/alyxgray/AlyxGrayOATHTokenBundle/wiki"
+		"issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
+		"wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
 	}
 }
