@@ -141,7 +141,7 @@ class OathToken
      * @throws InvalidArgumentException
      * @return OathToken
      */
-    public function sethotpSize($hotpSize)
+    public function setHotpSize($hotpSize)
     {
         // Ensures the OTP size is valid
         if (! is_numeric($hotpSize) || ($hotpSize < self::HOTP_MINIMUM_SIZE) || ($hotpSize > self::HOTP_MAXIMUM_SIZE)) {
@@ -155,13 +155,18 @@ class OathToken
         return $this;
     }
 
-    public function setMode($mode)
-    {
-        if ($mode) {}
-    }
-
+     
+    
+    /**
+     * Calculates HMAC
+     * @param string $key Secret key
+     * @param string $value Counter or time to use for HOTP calculation
+     * @return string
+     */
     public static function getHMAC($key, $value)
-    {}
+    {
+    	 return hash_hmac('sha1', $value, $key);       
+    }
 
     /**
      * Truncate an HMAC to a HOTP of desired size
@@ -202,6 +207,24 @@ class OathToken
         $format = '%0' . $hotpSize . 'f';
         return sprintf($format, $hotp);
     }
+    
+    
+    
+    /**
+     * Calculates one-time password
+     * @param string $key Secret key
+     * @param string $value Counter or time to use for HOTP calculation
+     * @param integer $hotpSize
+     */
+    public static function getHOTP ($key, $value, $hotpSize)
+    {
+    	$hmac = self::getHMAC($key, $value);
+    	
+    	return self::truncateHMAC($hmac, $hotpSize);
+    }
+    
+    
+    
 }
 
 

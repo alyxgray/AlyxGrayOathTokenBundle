@@ -23,10 +23,10 @@
 	},
 	"autoload" : {
 		"psr-0" : {
-			"AlyxGray\\OATHTokenBundle" : ""
+			"AlyxGray\\OathTokenBundle" : ""
 		}
 	},
-	"target-dir" : "alyxgray/OATHTokenBundle",
+	"target-dir" : "alyxgray/OathTokenBundle",
 	"minimum-stability" : "dev",
 	"support" : {
 		"source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
