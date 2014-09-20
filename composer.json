@@ -23,7 +23,7 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"AlyxGray\\OathTokenBundle" : ""
+			"AlyxGray\\OathTokenBundle\\" : ""
 		}
 	},
 	"minimum-stability" : "dev",
