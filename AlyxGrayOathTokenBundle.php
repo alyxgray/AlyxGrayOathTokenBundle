@@ -1,6 +1,6 @@
 <?php
 
-namespace AlyxGray\OATHTokenBundle;
+namespace AlyxGray\OathTokenBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
