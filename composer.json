@@ -26,7 +26,7 @@
 			"AlyxGray\\OathTokenBundle" : ""
 		}
 	},
-	"target-dir" : "alyxgray/OathTokenBundle",
+	"target-dir" : "alyxgray/oath-token-bundle",
 	"minimum-stability" : "dev",
 	"support" : {
 		"source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
