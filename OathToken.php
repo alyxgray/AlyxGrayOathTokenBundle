@@ -1,5 +1,5 @@
 <?php
-namespace AlyxGray\OATHTokenBundle;
+namespace AlyxGray\OathTokenBundle;
 
 class OathToken
 {
@@ -143,7 +143,7 @@ class OathToken
      *
      * @param integer $mode
      * @throws \InvalidArgumentException
-     * @return \AlyxGray\OATHTokenBundle\OathToken
+     * @return \AlyxGray\OathTokenBundle\OathToken
      */
     public function setMode($mode)
     {
@@ -167,7 +167,7 @@ class OathToken
      * @param boolean $ignoreRecommendedLength
      *            If true, use the minimum required secret length, rather than the recommended length
      * @throws \InvalidArgumentException
-     * @return \AlyxGray\OATHTokenBundle\OathToken
+     * @return \AlyxGray\OathTokenBundle\OathToken
      */
     public function setSecret($sharedSecret, $ignoreRecommendedLength = FALSE)
     {
@@ -190,7 +190,7 @@ class OathToken
      * @param integer $counter
      *            New counter value
      * @throws \InvalidArgumentException
-     * @return \AlyxGray\OATHTokenBundle\OathToken
+     * @return \AlyxGray\OathTokenBundle\OathToken
      */
     public function setCounter($counter)
     {
@@ -212,7 +212,7 @@ class OathToken
      * @param integer $hotpSize
      *            Size of one time password
      * @throws \InvalidArgumentException
-     * @return \AlyxGray\OATHTokenBundle\OathToken
+     * @return \AlyxGray\OathTokenBundle\OathToken
      */
     public function setHotpSize($hotpSize)
     {
