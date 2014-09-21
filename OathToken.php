@@ -1,5 +1,6 @@
 <?php
 namespace AlyxGray\OathTokenBundle;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 class OathToken
 {
@@ -38,6 +39,13 @@ class OathToken
      * @var integer
      */
     const ERROR_INVALID_MODE = 5;
+
+    /**
+     * Secret size in bits
+     *
+     * @var integer
+     */
+    const GENERATED_SECRET_SIZE = 160;
 
     /**
      * HMAC-SHA-1 (required by RFC 4226) produces a 160 bit value
@@ -296,6 +304,16 @@ class OathToken
         $hmac = self::calculateHMAC($key, $value);
 
         return self::truncateHMAC($hmac, $hotpSize);
+    }
+
+    public function generateSecret()
+    {
+        $generator = new SecureRandom();
+        $newSecret = $generator->nextBytes(self::GENERATED_SECRET_SIZE / 8);
+
+        $this->setSecret($newSecret);
+
+        return $newSecret;
     }
 }
 
