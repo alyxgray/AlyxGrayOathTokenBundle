@@ -118,6 +118,12 @@ class OathToken
     protected $mode = NULL;
 
     /**
+     * Optional manufacturer id for token
+     * @var string
+     */
+    protected $serial = NULL;
+
+    /**
      * Client/Server shared secret
      *
      * @var string
@@ -144,6 +150,15 @@ class OathToken
     public function __construct($sharedSecret, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
     {
         $this->setSecret($sharedSecret)->setMode($mode);
+    }
+
+    /**
+     *
+     * @return string|null
+     */
+    public function getSerial ()
+    {
+        return $this->serial;
     }
 
     /**
@@ -187,6 +202,20 @@ class OathToken
 
         // Store the shared secret in the object
         $this->sharedSecret = $sharedSecret;
+
+        // Permits method chaining
+        return $this;
+    }
+
+    /**
+     *
+     * @param string $serial
+     * @return \AlyxGray\OathTokenBundle\OathToken
+     */
+    public function setSerial($serial)
+    {
+        // Store the token serial in the object
+        $this->serial = $serial;
 
         // Permits method chaining
         return $this;

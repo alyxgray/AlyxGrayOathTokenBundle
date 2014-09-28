@@ -1,36 +1,31 @@
 {
-	"name" : "alyxgray/oath-token-bundle",
-	"description" : "Provides OATH token support for your Symfony2 project.",
-	"type" : "library",
-	"authors" : [{
-			"name" : "Alyx Gray",
-			"email" : "opensource@alyxgray.com",
-			"homepage" : "http://alyxgray.com",
-			"role" : "developer"
-		}
-	],
-	"keywords" : [
-		"oath",
-		"token"
-	],
-	"homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
-	"license" : [
-		"MIT"
-	],
-	"require" : {
-		"php" : ">=5.3.2",
-		"symfony/security-core" : "~2.5"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"AlyxGray\\OathTokenBundle\\" : ""
-		}
-	},
-	"minimum-stability" : "dev",
-	"support" : {
-		"source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
-		"email" : "opensource@alyxgray.com",
-		"issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
-		"wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
-	}
+  "name" : "alyxgray/oath-token-bundle",
+  "description" : "Provides OATH token support for your Symfony2 project.",
+  "require" : {
+    "php" : ">=5.3.2",
+    "symfony/security-core" : "~2.5",
+    "doctrine/orm" : "~2.4"
+  },
+  "authors" : [ {
+    "name" : "Alyx Gray",
+    "email" : "opensource@alyxgray.com",
+    "homepage" : "http://alyxgray.com",
+    "role" : "developer"
+  } ],
+  "support" : {
+    "source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
+    "email" : "opensource@alyxgray.com",
+    "issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
+    "wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
+  },
+  "keywords" : [ "oath", "token" ],
+  "minimum-stability" : "dev",
+  "autoload" : {
+    "psr-4" : {
+      "AlyxGray\\OathTokenBundle\\" : ""
+    }
+  },
+  "license" : [ "MIT" ],
+  "type" : "library",
+  "homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle"
 }
