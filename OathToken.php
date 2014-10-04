@@ -147,7 +147,7 @@ class OathToken
      * @param integer $counter
      *            Counter (for event-based tokens)
      */
-    public function __construct($sharedSecret, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
+    public function __construct($sharedSecret = NULL, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
     {
         $this->setSecret($sharedSecret)->setMode($mode);
     }
@@ -335,6 +335,11 @@ class OathToken
         return self::truncateHMAC($hmac, $hotpSize);
     }
 
+    /**
+     * Generates a new token secret
+     *
+     * @return string
+     */
     public function generateSecret()
     {
         $generator = new SecureRandom();
