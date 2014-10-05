@@ -31,8 +31,11 @@ class ManagerService
         // Create a new token object
         $oathToken = new DoctrineToken();
 
-        // Initialize the token by generating a new secret
+        // Generate a new secret
         $newSecret = $oathToken->generateSecret();
+
+        // Initialize the token using generated secret
+        $oathToken->setSecret($newSecret);
 
         // Persist the token using the entity manager
         $entityManager = $this->entityManager;

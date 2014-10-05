@@ -345,8 +345,6 @@ class OathToken
         $generator = new SecureRandom();
         $newSecret = $generator->nextBytes(self::GENERATED_SECRET_SIZE / 8);
 
-        $this->setSecret($newSecret);
-
         return $newSecret;
     }
 }
