@@ -1,10 +1,20 @@
 <?php
+/**
+ * This file is part of the Alyx Gray OATH token bundle.
+ *
+ * (c) Alyx Gray <opensource@alyxgray.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AlyxGray\OathTokenBundle\Entity;
 
 use AlyxGray\OathTokenBundle\OathToken;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Doctrine storage of an OATH token
  * @ORM\Entity
  * @ORM\Table(name="ag_token")
  */
