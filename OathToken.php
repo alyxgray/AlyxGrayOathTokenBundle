@@ -9,6 +9,7 @@
  */
 
 namespace AlyxGray\OathTokenBundle;
+
 use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
@@ -133,7 +134,7 @@ class OathToken
      * Optional manufacturer id for token
      * @var string
      */
-    protected $serial = NULL;
+    protected $serial = null;
 
     /**
      * Client/Server shared secret
@@ -159,7 +160,7 @@ class OathToken
      * @param integer $counter
      *                Counter (for event-based tokens)
      */
-    public function __construct($sharedSecret = NULL, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
+    public function __construct($sharedSecret = null, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
     {
         $this->setSecret($sharedSecret)->setMode($mode);
     }
@@ -168,7 +169,7 @@ class OathToken
      *
      * @return string|null
      */
-    public function getSerial ()
+    public function getSerial()
     {
         return $this->serial;
     }

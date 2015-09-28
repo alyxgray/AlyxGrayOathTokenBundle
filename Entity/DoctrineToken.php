@@ -2,7 +2,7 @@
 namespace AlyxGray\OathTokenBundle\Entity;
 
 use AlyxGray\OathTokenBundle\OathToken;
-use Doctrine\ORM\Mapping AS ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
@@ -15,7 +15,7 @@ class DoctrineToken extends OathToken
      * @ORM\Column(name="counter", type="integer")
      * @var integer
      */
-    protected $counter = NULL;
+    protected $counter = null;
 
     /**
      * ID for token in database
@@ -31,14 +31,14 @@ class DoctrineToken extends OathToken
      * @ORM\Column(name="mode", type="integer")
      * @var integer
      */
-    protected $mode = NULL;
+    protected $mode = null;
 
     /**
      * Client/Server shared secret
      * @ORM\Column(name="secret", type="string")
      * @var string
      */
-    protected $sharedSecret = NULL;
+    protected $sharedSecret = null;
 
     /**
      * One time password size
@@ -52,5 +52,5 @@ class DoctrineToken extends OathToken
      * @ORM\Column(name="serial", type="string", length="64")
      * @var string
      */
-    protected $serial = NULL;
+    protected $serial = null;
 }
