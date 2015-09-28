@@ -1,6 +1,18 @@
 <?php
+/**
+ * This file is part of the Alyx Gray OATH token bundle.
+ *
+ * (c) Alyx Gray <opensource@alyxgray.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AlyxGray\OathTokenBundle;
 
+/**
+ * Represents an OATH token
+ */
 class OathToken
 {
 
@@ -100,21 +112,21 @@ class OathToken
      *
      * @var integer
      */
-    protected $counter = NULL;
+    protected $counter = null;
 
     /**
      * Token mode (event or time)
      *
      * @var integer
      */
-    protected $mode = NULL;
+    protected $mode = null;
 
     /**
      * Client/Server shared secret
      *
      * @var string
      */
-    protected $sharedSecret = NULL;
+    protected $sharedSecret = null;
 
     /**
      * One time password size
@@ -126,12 +138,12 @@ class OathToken
     /**
      * Instantiate a new token
      *
-     * @param string $sharedSecret
-     *            Token shared secret
+     * @param string  $sharedSecret
+     *                Token shared secret
      * @param integer $mode
-     *            Determines whether the token is event- or time-based
+     *                Determines whether the token is event- or time-based
      * @param integer $counter
-     *            Counter (for event-based tokens)
+     *                Counter (for event-based tokens)
      */
     public function __construct($sharedSecret, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
     {
@@ -148,7 +160,7 @@ class OathToken
     public function setMode($mode)
     {
         // Ensure the mode is valid
-        if ($mode != self::TOKEN_MODE_EVENT && $mode != self::TOKEN_MODE_TIME){
+        if ($mode != self::TOKEN_MODE_EVENT && $mode != self::TOKEN_MODE_TIME) {
             throw new \InvalidArgumentException('Invalid mode specified', self::ERROR_INVALID_MODE);
         }
 
@@ -162,14 +174,14 @@ class OathToken
     /**
      * Set token shared secret
      *
-     * @param string $sharedSecret
-     *            Token shared secret
+     * @param string  $sharedSecret
+     *                Token shared secret
      * @param boolean $ignoreRecommendedLength
-     *            If true, use the minimum required secret length, rather than the recommended length
+     *                If true, use the minimum required secret length, rather than the recommended length
      * @throws \InvalidArgumentException
      * @return \AlyxGray\OathTokenBundle\OathToken
      */
-    public function setSecret($sharedSecret, $ignoreRecommendedLength = FALSE)
+    public function setSecret($sharedSecret, $ignoreRecommendedLength = false)
     {
         // Ensure that the shared secret meets complexity requirements
         $minLength = $ignoreRecommendedLength ? OathToken::SECRET_MINIMUM_BITS / 8 : OathToken::SECRET_RECOMMENDED_BITS / 8;
@@ -245,10 +257,10 @@ class OathToken
     /**
      * Truncate an HMAC to a HOTP of desired size
      *
-     * @param string $hotp
-     *            Binary representation of the hmac
+     * @param string  $hmac
+     *                Binary representation of the hmac
      * @param integer $hotpSize
-     *            Size of one time password
+     *                Size of one time password
      * @throws \InvalidArgumentException
      * @return string One time password
      */
@@ -278,18 +290,20 @@ class OathToken
         $hotp = $dynamicBinaryCode % pow(10, $hotpSize);
 
         // Formats HOTP to the desired size
-        $format = '%0' . $hotpSize . 'f';
+        $format = '%0'.$hotpSize.'f';
+
         return sprintf($format, $hotp);
     }
 
     /**
      * Calculates one-time password
      *
-     * @param string $key
-     *            Secret key
-     * @param string $value
-     *            Counter or time to use for HOTP calculation
+     * @param string  $key
+     *                Secret key
+     * @param string  $value
+     *                Counter or time to use for HOTP calculation
      * @param integer $hotpSize
+     * @return string Calculated one-time password
      */
     public static function calculateHOTP($key, $value, $hotpSize)
     {
@@ -298,5 +312,3 @@ class OathToken
         return self::truncateHMAC($hmac, $hotpSize);
     }
 }
-
-

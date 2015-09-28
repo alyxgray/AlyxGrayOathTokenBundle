@@ -1,36 +1,35 @@
 {
-	"name" : "alyxgray/oath-token-bundle",
-	"description" : "Provides OATH token support for your Symfony2 project.",
-	"type" : "library",
-	"authors" : [{
-			"name" : "Alyx Gray",
-			"email" : "opensource@alyxgray.com",
-			"homepage" : "http://alyxgray.com",
-			"role" : "developer"
-		}
-	],
-	"keywords" : [
-		"oath",
-		"token"
-	],
-	"homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
-	"license" : [
-		"MIT"
-	],
-	"require" : {
-		"php" : ">=5.3.2",
-		"symfony/framework-bundle" : ">=2.0.0"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"AlyxGray\\OathTokenBundle\\" : ""
-		}
-	},
-	"minimum-stability" : "dev",
-	"support" : {
-		"source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
-		"email" : "opensource@alyxgray.com",
-		"issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
-		"wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
-	}
+  "name" : "alyxgray/oath-token-bundle",
+  "description" : "Provides OATH token support for your Symfony2 project.",
+  "require" : {
+    "php" : ">=5.3.2",
+    "symfony/framework-bundle" : ">=2.0.0"
+  },
+  "require-dev" : {
+    "phpunit/phpunit" : "~4.8",
+    "squizlabs/php_codesniffer" : "~2.3",
+    "escapestudios/symfony2-coding-standard" : "~2.7"
+  },
+  "license" : [ "MIT" ],
+  "keywords" : [ "oath", "token" ],
+  "minimum-stability" : "dev",
+  "autoload" : {
+    "psr-4" : {
+      "AlyxGray\\OathTokenBundle\\" : ""
+    }
+  },
+  "type" : "library",
+  "support" : {
+    "source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
+    "email" : "opensource@alyxgray.com",
+    "issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
+    "wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
+  },
+  "authors" : [ {
+    "name" : "Alyx Gray",
+    "email" : "opensource@alyxgray.com",
+    "homepage" : "http://alyxgray.com",
+    "role" : "developer"
+  } ],
+  "homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle"
 }
