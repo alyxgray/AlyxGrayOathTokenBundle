@@ -9,6 +9,7 @@
  */
 
 namespace AlyxGray\OathTokenBundle;
+use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
  * Represents an OATH token
@@ -50,6 +51,13 @@ class OathToken
      * @var integer
      */
     const ERROR_INVALID_MODE = 5;
+
+    /**
+     * Secret size in bits
+     *
+     * @var integer
+     */
+    const GENERATED_SECRET_SIZE = 160;
 
     /**
      * HMAC-SHA-1 (required by RFC 4226) produces a 160 bit value
@@ -122,6 +130,12 @@ class OathToken
     protected $mode = null;
 
     /**
+     * Optional manufacturer id for token
+     * @var string
+     */
+    protected $serial = NULL;
+
+    /**
      * Client/Server shared secret
      *
      * @var string
@@ -145,9 +159,18 @@ class OathToken
      * @param integer $counter
      *                Counter (for event-based tokens)
      */
-    public function __construct($sharedSecret, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
+    public function __construct($sharedSecret = NULL, $mode = self::TOKEN_MODE_EVENT, $counter = 0)
     {
         $this->setSecret($sharedSecret)->setMode($mode);
+    }
+
+    /**
+     *
+     * @return string|null
+     */
+    public function getSerial ()
+    {
+        return $this->serial;
     }
 
     /**
@@ -191,6 +214,20 @@ class OathToken
 
         // Store the shared secret in the object
         $this->sharedSecret = $sharedSecret;
+
+        // Permits method chaining
+        return $this;
+    }
+
+    /**
+     *
+     * @param string $serial
+     * @return \AlyxGray\OathTokenBundle\OathToken
+     */
+    public function setSerial($serial)
+    {
+        // Store the token serial in the object
+        $this->serial = $serial;
 
         // Permits method chaining
         return $this;
@@ -310,5 +347,18 @@ class OathToken
         $hmac = self::calculateHMAC($key, $value);
 
         return self::truncateHMAC($hmac, $hotpSize);
+    }
+
+    /**
+     * Generates a new token secret
+     *
+     * @return string
+     */
+    public function generateSecret()
+    {
+        $generator = new SecureRandom();
+        $newSecret = $generator->nextBytes(self::GENERATED_SECRET_SIZE / 8);
+
+        return $newSecret;
     }
 }

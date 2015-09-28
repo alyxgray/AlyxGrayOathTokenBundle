@@ -9,8 +9,22 @@
     "phpunit/phpunit" : "~4.8",
     "squizlabs/php_codesniffer" : "~2.3",
     "escapestudios/symfony2-coding-standard" : "~2.7"
+    "symfony/security-core" : "~2.5",
+    "doctrine/orm" : "~2.4"
   },
   "license" : [ "MIT" ],
+  "authors" : [ {
+    "name" : "Alyx Gray",
+    "email" : "opensource@alyxgray.com",
+    "homepage" : "http://alyxgray.com",
+    "role" : "developer"
+  } ],
+  "support" : {
+    "source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
+    "email" : "opensource@alyxgray.com",
+    "issues" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/issues",
+    "wiki" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle/wiki"
+  },
   "keywords" : [ "oath", "token" ],
   "minimum-stability" : "dev",
   "autoload" : {
@@ -31,5 +45,6 @@
     "homepage" : "http://alyxgray.com",
     "role" : "developer"
   } ],
+  "type" : "library",
   "homepage" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle"
 }
