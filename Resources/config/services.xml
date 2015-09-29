@@ -9,7 +9,6 @@
 
     <services>
         <service id="alyx_gray.oath_token.manager" class="%alyx_gray.oath_token.manager.class%">
-            <argument type="service" id="doctrine.orm.entity_manager"></argument>
         </service>
     </services>
 </container>

@@ -1,9 +1,21 @@
 <?php
+/**
+ * This file is part of the Alyx Gray OATH token bundle.
+ *
+ * (c) Alyx Gray <opensource@alyxgray.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace AlyxGray\OathTokenBundle\Security\Token;
 
 use Doctrine\ORM\EntityManager;
 use AlyxGray\OathTokenBundle\Entity\DoctrineToken;
 
+/**
+ * Token management service
+ */
 class ManagerService
 {
     /**
@@ -13,11 +25,29 @@ class ManagerService
     protected $entityManager;
 
     /**
+     * Get the current entity manager
+     * @todo Factor this into an interface
+     * @return \Doctrine\ORM\EntityManager
+     */
+    public function getEntityManager() {
+        return $this->entityManager;
+    }
+
+    /**
+     * Set the current entity manager
      * @param EntityManager $entityManager
      */
-    public function __construct (EntityManager $entityManager)
+    public function setEntityManager($entityManager = null)
     {
-        $this->entityManager = $entityManager;
+        if ($entityManager != null) {
+            if ($entityManager instanceof EntityManager) {
+                $this->entityManager = $entityManager;
+            } else {
+                throw new \InvalidArgumentException('Argument to setEntityManager must be an instance of Doctrine\ORM\EntityManager');
+            }
+        } else {
+            $this->entityManager = null;
+        }
     }
 
     /**
@@ -26,7 +56,8 @@ class ManagerService
      *
      * @return array
      */
-    public function createSoftwareToken () {
+    public function createSoftwareToken()
+    {
 
         // Create a new token object
         $oathToken = new DoctrineToken();
@@ -50,4 +81,3 @@ class ManagerService
         );
     }
 }
-
