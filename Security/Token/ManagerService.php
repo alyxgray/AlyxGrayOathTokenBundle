@@ -25,6 +25,16 @@ class ManagerService
     protected $entityManager;
 
     /**
+     * Get the current entity manager
+     * @todo Factor this into an interface
+     * @return \Doctrine\ORM\EntityManager
+     */
+    public function getEntityManager() {
+        return $this->entityManager;
+    }
+
+    /**
+     * Set the current entity manager
      * @param EntityManager $entityManager
      */
     public function setEntityManager($entityManager = null)
