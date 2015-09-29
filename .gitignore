@@ -1,1 +1,8 @@
+# IDE files
+.buildpath
+.project
+.settings/
+
 /vendor/
+/Tests/app/cache/
+/Tests/app/logs/
