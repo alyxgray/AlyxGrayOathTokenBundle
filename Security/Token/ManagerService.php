@@ -45,6 +45,8 @@ class ManagerService
             } else {
                 throw new \InvalidArgumentException('Argument to setEntityManager must be an instance of Doctrine\ORM\EntityManager');
             }
+        } else {
+            $this->entityManager = null;
         }
     }
 

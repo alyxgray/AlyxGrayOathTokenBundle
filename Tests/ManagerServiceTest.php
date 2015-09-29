@@ -62,7 +62,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
 
         // Ensure null is handled correctly
         $service->setEntityManager(null);
-        $this->assertNull($service->getEntityManager, 'Failed to clear entity manager.');;
+        $this->assertNull($service->getEntityManager(), 'Failed to clear entity manager.');;
 
     }
 }
