@@ -10,7 +10,7 @@
     "squizlabs/php_codesniffer" : "~2.3",
     "escapestudios/symfony2-coding-standard" : "~2.7",
     "symfony/security-core" : "~2.7",
-    "doctrine/orm" : "~2.4"
+    "symfony/finder": "~2.7"
   },
   "license" : [ "MIT" ],
   "authors" : [ {
@@ -33,6 +33,10 @@
     }
   },
   "type" : "library",
+  "suggest" : {
+      "doctrine/orm": "Required for Doctrine support of tokens",
+      "doctrine/doctrine-bundle": "Required for Doctrine support of tokens"
+  },
   "support" : {
     "source" : "https://github.com/alyxgray/AlyxGrayOathTokenBundle",
     "email" : "opensource@alyxgray.com",
